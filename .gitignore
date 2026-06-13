@@ -1,0 +1,35 @@
+# ==========================================
+# 1. Các file tạm của phần mềm ModelSim
+# ==========================================
+modelsim/work/
+*.wlf
+*.mpf
+*.mti
+_info
+_vmake
+*.dat
+*.dbs
+*.prw
+*.psm
+
+# (Nếu sau này bạn dùng thêm Quartus để tổng hợp mạch, có thể thêm đoạn này)
+# db/
+# incremental_db/
+# output_files/
+# *.qws
+
+# ==========================================
+# 2. Các file biên dịch của C/C++ (Firmware)
+# ==========================================
+*.o
+*.elf
+*.bin
+*.hex
+*.out
+
+# ==========================================
+# 3. Các file cấu hình hệ điều hành & IDE
+# ==========================================
+.vscode/
+.DS_Store
+Thumbs.db
