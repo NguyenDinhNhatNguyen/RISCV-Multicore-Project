@@ -57,6 +57,7 @@ module RISCV_Core(
     wire [1:0] ResultSrc, ImmSrc;
     wire [3:0] ALUControl;
     wire MemWrite_internal;
+    wire Jalr;
 
     wire is_load  = (Instr[6:0] == 7'b0000011);
     wire is_store = (Instr[6:0] == 7'b0100011);
@@ -74,7 +75,8 @@ module RISCV_Core(
         .op(Instr[6:0]), .funct3(Instr[14:12]), .funct7b5(Instr[30]), .Zero(Zero),
         .stall(stall_internal),
         .ResultSrc(ResultSrc), .MemWrite(MemWrite_internal), .PCSrc(PCSrc),
-        .ALUSrc(ALUSrc), .RegWrite(RegWrite), .Jump(Jump), .ImmSrc(ImmSrc), .ALUControl(ALUControl)
+        .ALUSrc(ALUSrc), .RegWrite(RegWrite), .Jump(Jump), .ImmSrc(ImmSrc), .ALUControl(ALUControl),
+        .Jalr(Jalr)
     );
 
     // GỌI KHỐI MẠCH DỮ LIỆU (DATAPATH)
@@ -82,7 +84,8 @@ module RISCV_Core(
         .clk(clk), .reset(reset), .stall(stall_internal),
         .ResultSrc(ResultSrc), .PCSrc(PCSrc), .ALUSrc(ALUSrc), .RegWrite(RegWrite),
         .ImmSrc(ImmSrc), .ALUControl(ALUControl), .Instr(Instr), .ReadData(mem_rdata),
-        .Zero(Zero), .PC(core_pc_out), .ALUResult(mem_addr_internal), .WriteData(mem_wdata_internal)
+        .Zero(Zero), .PC(core_pc_out), .ALUResult(mem_addr_internal), .WriteData(mem_wdata_internal),
+        .Jalr(Jalr)
     );
 
 endmodule

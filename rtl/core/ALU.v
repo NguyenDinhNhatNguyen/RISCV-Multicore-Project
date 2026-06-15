@@ -41,9 +41,9 @@ module ALU(
 
             4'b0101: ResultReg <= {31'b0, slt};         //slt
             4'b0110: ResultReg <= {31'b0, sltu};        // sltu
-            4'b0111: ResultReg <= {A[31:12], 12'b0};    //lui
-            4'b1000: ResultReg <= A + {B[31:12], 12'b0}; // AUIPC
-            4'b1001: ResultReg <= {B[31:12], 12'b0};    // LUI
+            4'b0111: ResultReg <= {A[31:12],12'b0};    //lui
+            4'b1000: ResultReg <= A + B; // AUIPC
+            4'b1001: ResultReg <= B;    // LUI
 
             4'b1010: ResultReg <= A << B;               // sll, slli
             4'b1011: ResultReg <= A >>> B;              // sra

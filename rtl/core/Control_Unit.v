@@ -14,7 +14,8 @@ module Control_Unit(
     output wire       RegWrite,
     output wire       Jump,
     output wire [1:0] ImmSrc,
-    output wire [3:0] ALUControl
+    output wire [3:0] ALUControl,
+    output wire       Jalr
 );
 
     wire [1:0] ALUop;
@@ -35,7 +36,7 @@ module Control_Unit(
         .ALUop     (ALUop)
     );
 
-    ALU_Decoder ALU_Decoder(
+    ALU_decoder ALU_decoder(
         .opb5       (op[5]),
         .funct3     (funct3),
         .funct7b5   (funct7b5),
@@ -43,8 +44,10 @@ module Control_Unit(
         .ALUControl (ALUControl)
     );
 
-    assign PCSrc    = (Branch & Zero) | Jump;
+    wire take_branch = (funct3 == 3'b001) ? !Zero : Zero; 
+    assign PCSrc = (Branch & take_branch) | Jump | Jalr;
     assign MemWrite = stall ? 1'b0 : MemWrite_internal;
     assign RegWrite = stall ? 1'b0 : RegWrite_internal;
+    assign Jalr = (op == 7'b1100111);
 
 endmodule

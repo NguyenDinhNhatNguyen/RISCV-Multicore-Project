@@ -3,6 +3,7 @@
 module Core_Datapath(
 		     input	   clk,reset,
 			 input	   stall,
+			 input	   Jalr,
 		     input [1:0]   ResultSrc,
 		     input	   PCSrc,ALUSrc,
 		     input	   RegWrite,
@@ -40,12 +41,7 @@ module Core_Datapath(
 			    .PCTarget(PCtarget)
 			    );
 
-   PC_Mux PCmux_inst(
-		     .PC_Plus_4(PCplus4),
-		     .PC_Target(PCtarget),
-		     .PCSrc(PCSrc),
-		     .PC_Next(PCnext)
-		     );
+   assign PCnext = PCSrc ? (Jalr ? ALUResult : PCtarget) : PCplus4;
 
    Register_File Register_inst(
 			       .clk(clk),
@@ -58,7 +54,7 @@ module Core_Datapath(
 			       .RD2(WriteData)
 			       );
    Extend Extend_inst(
-		      .Instr(Instr[31:7]),
+		      .Instr(Instr),
 		      .ImmSrc(ImmSrc),
 		      .ImmExt(ImmExt)
 		      ); 

@@ -47,10 +47,10 @@ module ALU_decoder(
                 endcase
 
             2'b11: //ALUOp = 2'b11 and beyond
-                case (funct3)
+                case (opb5)
 
-                    3'b000: ALUControl = 4'b01000; // AUIPC
-                    3'b001: ALUControl = 4'b01001; // LUI
+                    1'b0: ALUControl = 4'b1000; // AUIPC
+                    1'b1: ALUControl = 4'b1001; // LUI
 
                     default: ALUControl = 4'bxxxx;
 
