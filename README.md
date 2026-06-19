@@ -114,8 +114,8 @@ This project builds upon foundational open-source IP cores and standard toolchai
 * **ISA Specification**: The RISC-V Instruction Set Manual (Volume I: Unprivileged ISA).
 
 ## 👨‍💻 Authors
-### Nguyễn Đình Nhật Nguyên (Student ID: 23521043)
+* **Nguyễn Đình Nhật Nguyên** (Student ID: 23521043)
 
-### Lê Hưng Phát (Student ID: 23521139)
+* **Lê Hưng Phát** (Student ID: 23521139)
 
-### University of Information Technology (UIT), VNU-HCM
+* **University of Information Technology (UIT), VNU-HCM**
