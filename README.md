@@ -73,6 +73,8 @@ Add the necessary waveforms (or load the provided `modelsim/wave.do` script) and
 ```Tcl
 run 5000ns
 ```
+### 4. Synthesis
+Open the project in Quartus Prime 13.0 SP1, target family device Cyclone IV E, and click Start Compilation. The timing.sdc file is included to ensure correct $F_{max}$ analysis.
 
 ## 📂 Directory Structure
 ```Plaintext
