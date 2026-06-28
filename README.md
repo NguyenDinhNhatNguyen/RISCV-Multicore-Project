@@ -82,7 +82,7 @@ Open the project in Quartus Prime 13.0 SP1, target family device Cyclone IV E, a
  ┣ 📂 archive/            # Deprecated RTL and Assembly files
  ┣ 📂 doc/                # Project reports and presentation slides
  ┣ 📂 image/              # Diagrams and waveform screenshots for documentation
- ┣ 📂 modelsim/           # ModelSim wave configurations (.do)
+ ┣ 📂 quartus/            # Quartus Prime project & synthesis reports (.rpt)
  ┣ 📂 rtl/                # Verilog source files
  ┃ ┣ 📂 core/             # RISC-V Single-Cycle Core
  ┃ ┣ 📂 interconnect/     # Crossbar 2x3 Matrix
