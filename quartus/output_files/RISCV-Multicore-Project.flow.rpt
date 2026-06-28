@@ -1,0 +1,135 @@
+Flow report for RISCV-Multicore-Project
+Sun Jun 28 09:18:21 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Sun Jun 28 09:18:21 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; RISCV-Multicore-Project                         ;
+; Top-level Entity Name              ; DualCore_Top                                    ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 29,746 / 39,600 ( 75 % )                        ;
+;     Total combinational functions  ; 17,672 / 39,600 ( 45 % )                        ;
+;     Dedicated logic registers      ; 18,572 / 39,600 ( 47 % )                        ;
+; Total registers                    ; 18572                                           ;
+; Total pins                         ; 34 / 329 ( 10 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 1,161,216 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 232 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Device                             ; EP4CE40F23C6                                    ;
+; Timing Models                      ; Final                                           ;
++------------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------+
+; Flow Settings                               ;
++-------------------+-------------------------+
+; Option            ; Setting                 ;
++-------------------+-------------------------+
+; Start date & time ; 06/28/2026 08:43:24     ;
+; Main task         ; Compilation             ;
+; Revision Name     ; RISCV-Multicore-Project ;
++-------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                        ;
++--------------------------------------+---------------------------------------+-------------------------+--------------+-----------------+
+; Assignment Name                      ; Value                                 ; Default Value           ; Entity Name  ; Section Id      ;
++--------------------------------------+---------------------------------------+-------------------------+--------------+-----------------+
+; COMPILER_SIGNATURE_ID                ; 345052807169.178261100419312          ; --                      ; --           ; --              ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --                      ; --           ; DualCore_Top_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; DualCore_Top_tb                       ; --                      ; --           ; eda_simulation  ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --                      ; --           ; eda_simulation  ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>                  ; --           ; --              ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --                      ; --           ; eda_simulation  ;
+; EDA_TEST_BENCH_FILE                  ; ../sim/DualCore_Top_tb.v              ; --                      ; --           ; DualCore_Top_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; DualCore_Top_tb                       ; --                      ; --           ; DualCore_Top_tb ;
+; EDA_TEST_BENCH_NAME                  ; DualCore_Top_tb                       ; --                      ; --           ; eda_simulation  ;
+; EDA_TIME_SCALE                       ; 1 ps                                  ; --                      ; --           ; eda_simulation  ;
+; PARTITION_COLOR                      ; 16764057                              ; --                      ; DualCore_Top ; Top             ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --                      ; DualCore_Top ; Top             ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --                      ; DualCore_Top ; Top             ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --                      ; --           ; --              ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --                      ; --           ; --              ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --                      ; --           ; --              ;
+; TOP_LEVEL_ENTITY                     ; DualCore_Top                          ; RISCV-Multicore-Project ; --           ; --              ;
++--------------------------------------+---------------------------------------+-------------------------+--------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:02:26     ; 1.0                     ; 4829 MB             ; 00:02:25                           ;
+; Fitter                    ; 00:31:25     ; 5.9                     ; 5857 MB             ; 00:44:57                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4660 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:25     ; 2.6                     ; 5528 MB             ; 00:00:36                           ;
+; EDA Netlist Writer        ; 00:00:25     ; 1.0                     ; 4856 MB             ; 00:00:25                           ;
+; Total                     ; 00:34:44     ; --                      ; --                  ; 00:48:26                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DoN              ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DoN              ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DoN              ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DoN              ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DoN              ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off RISCV-Multicore-Project -c RISCV-Multicore-Project
+quartus_fit --read_settings_files=off --write_settings_files=off RISCV-Multicore-Project -c RISCV-Multicore-Project
+quartus_asm --read_settings_files=off --write_settings_files=off RISCV-Multicore-Project -c RISCV-Multicore-Project
+quartus_sta RISCV-Multicore-Project -c RISCV-Multicore-Project
+quartus_eda --read_settings_files=off --write_settings_files=off RISCV-Multicore-Project -c RISCV-Multicore-Project
+
+
+

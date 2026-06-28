@@ -2,7 +2,9 @@
 
 module DualCore_Top(
     input wire        clk,
-    input wire        reset
+    input wire        reset,
+
+    output wire [31:0] dummy_out
 );
 
     // =========================================================
@@ -37,8 +39,8 @@ module DualCore_Top(
     // =========================================================
     // Phân vùng lõi 0
     // Code dưới để test bus bằng core0
-    // Instruction_Memory #(.FILE_NAME("D:/DualCore_RISCV/archive/asm/core0_testbus.txt")) ROM_Core0 ( .A(c0_pc), .RD(c0_instr) ); 
-    Instruction_Memory #(.FILE_NAME("D:/DualCore_RISCV/software/asm/core0.txt")) ROM_Core0 ( .A(c0_pc), .RD(c0_instr) );
+    // Instruction_Memory #(.FILE_NAME(D:/RISCV-Multicore-Project/archive/asm/core0_testbus.txt")) ROM_Core0 ( .A(c0_pc), .RD(c0_instr) ); 
+    Instruction_Memory #(.FILE_NAME("D:/RISCV-Multicore-Project/software/asm/core0.txt")) ROM_Core0 ( .A(c0_pc), .RD(c0_instr) );
 
     RISCV_Core Core_0 (
         .clk(clk), .reset(reset),
@@ -51,8 +53,8 @@ module DualCore_Top(
 
     // Phân vùng lõi 1
     // Code dưới để hỗ trợ test bus bằng core0
-    // Instruction_Memory #(.FILE_NAME("D:/DualCore_RISCV/archive/asm/core1_testbus.txt")) ROM_Core1 ( .A(c1_pc), .RD(c1_instr) ); 
-    Instruction_Memory #(.FILE_NAME("D:/DualCore_RISCV/software/asm/core1.txt")) ROM_Core1 ( .A(c1_pc), .RD(c1_instr) ); 
+    // Instruction_Memory #(.FILE_NAME("D:/RISCV-Multicore-Project/archive/asm/core1_testbus.txt")) ROM_Core1 ( .A(c1_pc), .RD(c1_instr) ); 
+    Instruction_Memory #(.FILE_NAME("D:/RISCV-Multicore-Project/software/asm/core1.txt")) ROM_Core1 ( .A(c1_pc), .RD(c1_instr) ); 
 
     RISCV_Core Core_1 (
         .clk(clk), .reset(reset),
@@ -125,5 +127,7 @@ module DualCore_Top(
         .icc_valid(s2_req), .icc_write(s2_wen), .icc_addr(s2_addr), .icc_wdata(s2_wdata), .icc_rdata(s2_rdata),
         .irq_core0(core0_irq), .irq_core1(core1_irq)
     );
+
+    assign dummy_out = c0_mem_addr | c1_mem_addr;
 
 endmodule
