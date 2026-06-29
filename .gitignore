@@ -1,8 +1,42 @@
-# ==========================================
-# 1. Các file tạm của phần mềm ModelSim
-# ==========================================
+# ========================================
+# 1. QUARTUS PRIME (Tổng hợp phần cứng)
+# ========================================
+db/
+incremental_db/
+greybox_tmp/
+reconfig/
+output_files/
+*.qws
+*.bak
+*.kpt
+*.tcl~
+*.rpt
+*.smsg
+*.summary
+*.done
+*.jdi
+*.pin
+*.qmsg
+*.map
+*.log
+*.err
+*.sof
+*.pof
+*.rbf
+*.jam
+*.jbc
+
+# ========================================
+# 2. MODELSIM (Mô phỏng)
+# ========================================
+work/
 modelsim/work/
+simulation/
+transcript
+modelsim.ini
+vsim.wlf
 *.wlf
+*.vcd
 *.mpf
 *.mti
 _info
@@ -11,25 +45,30 @@ _vmake
 *.dbs
 *.prw
 *.psm
+*.vo
+*.vho
+*.sdo
+*.vt
 
-# (Nếu sau này bạn dùng thêm Quartus để tổng hợp mạch, có thể thêm đoạn này)
-# db/
-# incremental_db/
-# output_files/
-# *.qws
-
-# ==========================================
-# 2. Các file biên dịch của C/C++ (Firmware)
-# ==========================================
+# ========================================
+# 3. C/C++ FIRMWARE (Phần mềm nhúng)
+# ========================================
+# Các file trung gian và file thực thi sinh ra từ GCC/Keil/IDE
 *.o
 *.elf
 *.bin
 *.hex
 *.out
+*.su
+*.d
+*.map
+build/
+Debug/
+Release/
 
-# ==========================================
-# 3. Các file cấu hình hệ điều hành & IDE
-# ==========================================
+# ========================================
+# 4. OS & IDE (Hệ điều hành & Môi trường)
+# ========================================
 .vscode/
 .DS_Store
 Thumbs.db
