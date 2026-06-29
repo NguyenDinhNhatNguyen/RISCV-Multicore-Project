@@ -1,6 +1,6 @@
 # RISC-V Dual-Core SoC with Hardware Synchronization
 
-!![Version](https://img.shields.io/badge/Version-2.0_(Post--Defense)-success.svg)
+![Version](https://img.shields.io/badge/Version-2.0_(Post--Defense)-success.svg)
 ![Architecture](https://img.shields.io/badge/Architecture-RISC--V%20RV32I%20(Dual--Core)-blue.svg)
 ![FPGA](https://img.shields.io/badge/Target-Cyclone_IV_E_(EP4CE40F23C6)-orange.svg)
 ![Verilog](https://img.shields.io/badge/Language-Verilog%20HDL-green.svg)
