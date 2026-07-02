@@ -228,10 +228,6 @@ Additionally responsible for maintaining the early assembly-based regression tes
 
 ## 6. Post-Defense Optimization & Physical Verification (Version 2.0)
 
-This phase represents the post-defense optimization stage, focusing on quantitative performance evaluation, FPGA implementation, physical verification, and automated testing.
-
-## 6. Post-Defense Optimization & Physical Verification (Version 2.0)
-
 This phase represents the post-defense optimization stage, focusing on quantitative performance evaluation, FPGA implementation, architectural refinement, and automated verification.
 
 ### Nguyen
