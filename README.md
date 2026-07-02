@@ -125,9 +125,163 @@ This project builds upon foundational open-source IP cores and standard toolchai
 
 * **ISA Specification**: The RISC-V Instruction Set Manual (Volume I: Unprivileged ISA).
 
-## 👨‍💻 Authors
-* **Nguyễn Đình Nhật Nguyên** (Student ID: 23521043)
+# 👥 Contributors
 
-* **Lê Hưng Phát** (Student ID: 23521139)
+This project was developed through close collaboration between two team members, with responsibilities clearly divided across hardware architecture, embedded software, system integration, and post-development optimization.
 
-* **University of Information Technology (UIT), VNU-HCM**
+---
+
+## 1. RTL Base Core Subsystem
+
+### Nguyen
+
+* Encapsulated the processor core structure (`RISCV_Core.v`)
+* Designed the processor control wrapper
+* Integrated the external hardware stall mechanism into:
+
+  * `Core_Datapath.v`
+  * `PC.v`
+
+### Phat
+
+Responsible for verification and standardization of the fundamental processor modules inherited from the open-source single-cycle implementation:
+
+* `ALU.v`
+* `Control_Unit.v`
+* `Main_Decoder.v`
+* `Register_File.v`
+
+---
+
+## 2. Interconnect & IP Subsystem
+
+### Nguyen
+
+* Designed the distributed 2×3 Crossbar architecture (`crossbar_2x3.v`)
+* Implemented the hardware **Round-Robin arbitration algorithm** for fair resource allocation
+
+### Phat
+
+Designed the **Inter-Core Controller (`InterCore_Ctrl.v`)**, including:
+
+* Hardware Mutex based on the Atomic Test-and-Set algorithm
+* Mailbox interrupt system for inter-core communication
+
+---
+
+## 3. System Integration, Memory & Simulation
+
+### Nguyen
+
+* Designed the top-level SoC architecture (`DualCore_Top.v`)
+* Defined the physical memory address map
+* Parameterized the instruction ROM subsystem (`Instruction_Memory.v`)
+
+### Phat
+
+* Designed the shared RAM architecture (`Data_Memory.v`)
+* Developed system-level verification scenarios
+* Implemented the simulation environment and testbench (`DualCore_Top_tb.v`)
+
+---
+
+## 4. Low-Level Embedded Software & Toolchain
+
+### Nguyen
+
+* Configured the automated firmware build system (`build.bat`)
+* Developed the assembly startup runtime (`startup.S`)
+* Designed the linker configuration (`memory.ld`)
+
+### Phat
+
+* Developed the embedded firmware application (`main.cpp`)
+* Implemented the hardware mutex spinlock synchronization logic
+* Created peripheral register mapping headers:
+
+  * `icc.h`
+  * `crossbar.h`
+
+---
+
+## 5. Historical Archive & Optimization Analysis
+
+### Nguyen
+
+Analyzed the limitations of the legacy fixed-priority arbitration architecture using:
+
+* `archive/rtl/crossbar_2x2.v`
+
+The analysis focused on identifying bottlenecks and starvation risks, motivating the adoption of the Round-Robin arbitration mechanism.
+
+### Phat
+
+Evaluated the bandwidth limitations of the legacy shared-bus architecture:
+
+* `archive/rtl/Bus_Arbiter.v`
+
+Additionally responsible for maintaining the early assembly-based regression test cases stored in:
+
+* `archive/asm/`
+
+---
+
+## 6. Post-Defense Optimization & Physical Verification (Version 2.0)
+
+This phase represents the post-defense optimization stage, focusing on quantitative performance evaluation, FPGA implementation, physical verification, and automated testing.
+
+## 6. Post-Defense Optimization & Physical Verification (Version 2.0)
+
+This phase represents the post-defense optimization stage, focusing on quantitative performance evaluation, FPGA implementation, architectural refinement, and automated verification.
+
+### Nguyen
+
+#### RTL Refactoring & Architectural Enhancement
+
+* Refactored and optimized multiple RTL modules to improve maintainability, readability, and hardware reliability.
+* Redesigned the **`crossbar_2x3.v`** and other modules interconnect to fully support concurrent dual-core execution, enabling true multicore operation with independent master transactions.
+* Refined the Round-Robin arbitration logic to improve fairness and eliminate edge cases observed during high-contention scenarios.
+* Updated the system interconnect to ensure seamless coordination between the Crossbar, Memory Banks, and Inter-Core Controller.
+
+#### Physical Synthesis Engineering
+
+* Implemented the complete FPGA synthesis flow using **Intel Quartus Prime** (Analysis, Synthesis, Fitter, and Timing Analysis).
+* Developed timing constraints (`timing.sdc`) and applied the **dummy_out** technique to preserve critical logic during optimization.
+* Performed synthesis-driven RTL refinements to improve hardware implementation quality.
+
+#### Performance Profiling & Modeling
+
+* Developed analytical performance models for:
+
+  * Cycles Per Instruction (CPI)
+  * Execution Time ($T_{exec}$)
+* Evaluated the implemented design on FPGA and established measured performance metrics, including:
+
+  * Maximum operating frequency: **32.32 MHz**
+  * Logic utilization: **approximately 75% of FPGA Logic Elements (LEs)**
+
+#### Functional Validation
+
+* Executed extensive verification scenarios under heavy Crossbar contention.
+* Validated:
+
+  * Hardware Mutex correctness
+  * Round-Robin arbitration fairness
+  * Parallel memory access behavior
+  * Overall multicore synchronization reliability
+---
+
+### Phat
+
+#### Testbench Modernization
+
+* Completely redesigned the system testbench (`DualCore_Top_tb.v`).
+* Added automated performance-monitoring utilities, including:
+
+  * Stall-cycle counting
+  * Execution-time measurement using `$realtime`
+* Improved the repeatability, transparency, and objectivity of performance evaluation.
+
+
+
+
