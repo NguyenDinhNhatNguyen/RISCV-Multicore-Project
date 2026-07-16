@@ -129,6 +129,12 @@ This project builds upon foundational open-source IP cores and standard toolchai
 
 This project was developed through close collaboration between two team members, with responsibilities clearly divided across hardware architecture, embedded software, system integration, and post-development optimization.
 
+## Nguyen
+**Role**: SoC / Hardware Architect, RTL Designer, FPGA Implementation Engineer & Low-Level Firmware Engineer
+
+## Phat
+**Role**: IP Design Engineer, Design Verification (DV) Engineer & Embedded Software Developer
+
 ---
 
 ## 1. RTL Base Core Subsystem
@@ -144,7 +150,7 @@ This project was developed through close collaboration between two team members,
 
 ### Phat
 
-Responsible for verification and standardization of the fundamental processor modules inherited from the open-source single-cycle implementation:
+Responsible for the verification and standardization of the fundamental processor modules inherited from the open-source single-cycle implementation:
 
 * `ALU.v`
 * `Control_Unit.v`
