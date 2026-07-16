@@ -265,7 +265,6 @@ This phase represents the post-defense optimization stage, focusing on quantitat
   * Round-Robin arbitration fairness
   * Parallel memory access behavior
   * Overall multicore synchronization reliability
----
 
 ### Phat
 
